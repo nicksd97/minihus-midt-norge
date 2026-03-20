@@ -164,10 +164,10 @@ export default function ContactPage() {
                 <div>
                   <div className="font-medium">Telefon</div>
                   <a
-                    href="tel:+4791330854"
+                    href="tel:+4791330864"
                     className="text-sm text-muted transition-colors hover:text-gold"
                   >
-                    +47 913 30 854
+                    +47 913 30 864
                   </a>
                 </div>
               </li>
@@ -188,7 +188,7 @@ export default function ContactPage() {
           {/* Map placeholder */}
           <div className="flex-1 overflow-hidden rounded-xl border border-card-border">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1750.0!2d10.3!3d63.15!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNjPCsDA5JzAwLjAiTiAxMMKwMTgnMDAuMCJF!5e0!3m2!1sno!2sno!4v1"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500!2d10.2567!3d63.3567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNjPCsDIxJzI0LjEiTiAxMMKwMTUnMjQuMSJF!5e0!3m2!1sno!2sno!4v1"
               width="100%"
               height="300"
               style={{ border: 0 }}

@@ -277,10 +277,10 @@ export default function HomePage() {
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-6">
             <a
-              href="tel:+4791330854"
+              href="tel:+4791330864"
               className="inline-flex items-center gap-2 text-lg font-medium text-gold"
             >
-              <Phone size={20} /> +47 913 30 854
+              <Phone size={20} /> +47 913 30 864
             </a>
             <a
               href="mailto:post@rsamdalsnekkeri.no"

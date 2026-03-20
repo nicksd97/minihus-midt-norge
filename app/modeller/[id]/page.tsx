@@ -155,7 +155,7 @@ export default async function ModelPage({
                 Send forespørsel <ArrowRight size={16} />
               </Link>
               <a
-                href="tel:+4791330854"
+                href="tel:+4791330864"
                 className="inline-flex items-center gap-2 rounded-lg border border-card-border px-5 py-2.5 text-sm font-medium transition-colors hover:border-gold hover:text-gold"
               >
                 <Phone size={16} /> Ring oss
