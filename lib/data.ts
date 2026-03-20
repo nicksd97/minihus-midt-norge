@@ -35,6 +35,7 @@ export const models: Model[] = [
       "Leveres som byggesett eller ferdig montert",
     ],
     images: [
+      "/images/hagestue-12/hero.jpg",
       "/images/hagestue-12/1.jpg",
       "/images/hagestue-12/2.jpg",
       "/images/hagestue-12/3.jpg",
@@ -58,6 +59,7 @@ export const models: Model[] = [
       "Perfekt for naturskjønne tomter",
     ],
     images: [
+      "/images/panorama-12/hero.jpg",
       "/images/panorama-12/1.jpg",
       "/images/panorama-12/2.jpg",
       "/images/panorama-12/3.jpg",
@@ -82,6 +84,7 @@ export const models: Model[] = [
       "Perfekt som utleieenhet eller studentbolig",
     ],
     images: [
+      "/images/hybel-12/hero.jpg",
       "/images/hybel-12/1.jpg",
       "/images/hybel-12/2.jpg",
       "/images/hybel-12/3.jpg",
@@ -105,6 +108,7 @@ export const models: Model[] = [
       "Tilpasset utleievirksomhet",
     ],
     images: [
+      "/images/camping-12/hero.jpg",
       "/images/camping-12/1.jpg",
       "/images/camping-12/2.jpg",
       "/images/camping-12/3.jpg",
@@ -129,6 +133,7 @@ export const models: Model[] = [
       "Godt isolert",
     ],
     images: [
+      "/images/anneks-12/hero.jpg",
       "/images/anneks-12/1.jpg",
       "/images/anneks-12/2.jpg",
       "/images/anneks-12/3.jpg",
@@ -154,6 +159,7 @@ export const models: Model[] = [
       "Populær for utleie og turisme",
     ],
     images: [
+      "/images/glamping-14/hero.jpg",
       "/images/glamping-14/1.jpg",
       "/images/glamping-14/2.jpg",
       "/images/glamping-14/3.jpg",
@@ -176,6 +182,7 @@ export const models: Model[] = [
       "Fleksibel møblering",
     ],
     images: [
+      "/images/hybel-15/hero.jpg",
       "/images/hybel-15/1.jpg",
       "/images/hybel-15/2.jpg",
       "/images/hybel-15/3.jpg",
@@ -198,6 +205,7 @@ export const models: Model[] = [
       "Kan plasseres på egen tomt",
     ],
     images: [
+      "/images/minibolig-21/hero.jpg",
       "/images/minibolig-21/1.jpg",
       "/images/minibolig-21/2.jpg",
       "/images/minibolig-21/3.jpg",
@@ -223,6 +231,7 @@ export const models: Model[] = [
       "Moderne kjøkken og bad",
     ],
     images: [
+      "/images/minibolig-30/hero.jpg",
       "/images/minibolig-30/1.jpg",
       "/images/minibolig-30/2.jpg",
       "/images/minibolig-30/3.jpg",
@@ -247,6 +256,7 @@ export const models: Model[] = [
       "Åpen stue og kjøkkenløsning",
     ],
     images: [
+      "/images/minibolig-50-flatt/hero.jpg",
       "/images/minibolig-50-flatt/1.jpg",
       "/images/minibolig-50-flatt/2.jpg",
       "/images/minibolig-50-flatt/3.jpg",
@@ -270,6 +280,7 @@ export const models: Model[] = [
       "Passer inn i etablerte boligområder",
     ],
     images: [
+      "/images/minibolig-50-saltak/hero.jpg",
       "/images/minibolig-50-saltak/1.jpg",
       "/images/minibolig-50-saltak/2.jpg",
       "/images/minibolig-50-saltak/3.jpg",
@@ -294,6 +305,7 @@ export const models: Model[] = [
       "Ideell for utleie eller generasjonsbolig",
     ],
     images: [
+      "/images/tomanns-50-flatt/hero.jpg",
       "/images/tomanns-50-flatt/1.jpg",
       "/images/tomanns-50-flatt/2.jpg",
       "/images/tomanns-50-flatt/3.jpg",
@@ -317,6 +329,7 @@ export const models: Model[] = [
       "Passer inn i etablerte strøk",
     ],
     images: [
+      "/images/tomanns-50-saltak/hero.jpg",
       "/images/tomanns-50-saltak/1.jpg",
       "/images/tomanns-50-saltak/2.jpg",
       "/images/tomanns-50-saltak/3.jpg",
