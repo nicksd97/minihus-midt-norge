@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="border-t border-card-border bg-card">
+    <footer className="border-t border-gray-200 bg-white text-gray-900">
       <div className="mx-auto max-w-7xl px-6 pt-12 pb-16">
         {/* Prominent logo */}
         <div className="flex justify-center pb-10">
@@ -20,10 +20,10 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-3">
           {/* Brand */}
           <div>
-            <h3 className="font-heading text-2xl tracking-wide text-gold">
+            <h3 className="font-heading text-2xl tracking-wide text-primary">
               MINIHUS MIDT-NORGE
             </h3>
-            <p className="mt-3 text-sm leading-relaxed text-muted">
+            <p className="mt-3 text-sm leading-relaxed text-gray-500">
               Autorisert Byggmann-forhandler i Midt-Norge. Vi hjelper deg med
               drømmen om eget minihus, fra planlegging til ferdig montert bolig.
             </p>
@@ -31,7 +31,7 @@ export function Footer() {
 
           {/* Links */}
           <div>
-            <h4 className="font-heading text-lg tracking-wide text-foreground">
+            <h4 className="font-heading text-lg tracking-wide text-gray-900">
               SIDER
             </h4>
             <ul className="mt-3 flex flex-col gap-2">
@@ -44,7 +44,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted transition-colors hover:text-gold"
+                    className="text-sm text-gray-500 transition-colors hover:text-primary"
                   >
                     {link.label}
                   </Link>
@@ -55,12 +55,12 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-heading text-lg tracking-wide text-foreground">
+            <h4 className="font-heading text-lg tracking-wide text-gray-900">
               KONTAKT
             </h4>
             <ul className="mt-3 flex flex-col gap-3">
-              <li className="flex items-start gap-2 text-sm text-muted">
-                <MapPin size={16} className="mt-0.5 shrink-0 text-gold" />
+              <li className="flex items-start gap-2 text-sm text-gray-500">
+                <MapPin size={16} className="mt-0.5 shrink-0 text-primary" />
                 <span>
                   Byggefirmaet R. Samdal Snekkeri
                   <br />
@@ -70,18 +70,18 @@ export function Footer() {
               <li>
                 <a
                   href="mailto:post@rsamdalsnekkeri.no"
-                  className="flex items-center gap-2 text-sm text-muted transition-colors hover:text-gold"
+                  className="flex items-center gap-2 text-sm text-gray-500 transition-colors hover:text-primary"
                 >
-                  <Mail size={16} className="shrink-0 text-gold" />
+                  <Mail size={16} className="shrink-0 text-primary" />
                   post@rsamdalsnekkeri.no
                 </a>
               </li>
               <li>
                 <a
                   href="tel:+4791330854"
-                  className="flex items-center gap-2 text-sm text-muted transition-colors hover:text-gold"
+                  className="flex items-center gap-2 text-sm text-gray-500 transition-colors hover:text-primary"
                 >
-                  <Phone size={16} className="shrink-0 text-gold" />
+                  <Phone size={16} className="shrink-0 text-primary" />
                   +47 913 30 854
                 </a>
               </li>
@@ -89,7 +89,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-card-border pt-8 text-center text-xs text-muted">
+        <div className="mt-12 border-t border-gray-200 pt-8 text-center text-xs text-gray-400">
           &copy; {new Date().getFullYear()} Minihus Midt-Norge / Byggefirmaet
           R. Samdal Snekkeri. Alle rettigheter reservert.
         </div>
