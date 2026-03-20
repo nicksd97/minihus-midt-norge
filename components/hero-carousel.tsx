@@ -57,14 +57,9 @@ export function HeroCarousel({ items }: { items: CarouselItem[] }) {
 
       {/* Info overlay */}
       <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 sm:p-6">
-        <div>
-          <h3 className="font-heading text-2xl tracking-wide text-white sm:text-3xl">
-            {item.name}
-          </h3>
-          <p className="text-sm text-white/70">
-            {item.size} {item.sizeUnit}
-          </p>
-        </div>
+        <h3 className="font-heading text-2xl tracking-wide text-white sm:text-3xl">
+          {item.name}
+        </h3>
         <Link
           href="/kontakt"
           className="shrink-0 rounded-lg bg-gold px-4 py-2 text-sm font-semibold text-background transition-colors hover:bg-gold-light"
