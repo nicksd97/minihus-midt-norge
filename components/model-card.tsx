@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { type Model } from "@/lib/data";
-import { ArrowRight, Ruler, BadgeCheck } from "lucide-react";
+import { ArrowRight, Ruler } from "lucide-react";
 
 export function ModelCard({ model }: { model: Model }) {
   const hasImage = model.images.length > 0;
@@ -23,12 +23,6 @@ export function ModelCard({ model }: { model: Model }) {
         ) : (
           <div className="flex h-full items-center justify-center text-muted">
             <span className="text-sm">Bilde kommer</span>
-          </div>
-        )}
-        {model.specs.tek17 && (
-          <div className="absolute left-3 top-3 flex items-center gap-1 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-foreground">
-            <BadgeCheck size={14} />
-            TEK17
           </div>
         )}
       </div>

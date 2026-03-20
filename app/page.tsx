@@ -149,11 +149,6 @@ export default function HomePage() {
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
-                  {model.specs.tek17 && (
-                    <div className="absolute left-3 top-3 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-foreground">
-                      TEK17
-                    </div>
-                  )}
                 </div>
               </Link>
               <div className="p-5">
