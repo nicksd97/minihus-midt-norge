@@ -34,7 +34,12 @@ export const models: Model[] = [
       "Ferdig isolert og klar for bruk",
       "Leveres som byggesett eller ferdig montert",
     ],
-    images: ["/images/hagestue-12/1.jpg", "/images/hagestue-12/2.jpg"],
+    images: [
+      "/images/hagestue-12/1.jpg",
+      "/images/hagestue-12/2.jpg",
+      "/images/hagestue-12/3.jpg",
+      "/images/hagestue-12/4.jpg",
+    ],
     specs: { tek17: false },
   },
   {
@@ -56,6 +61,8 @@ export const models: Model[] = [
       "/images/panorama-12/1.jpg",
       "/images/panorama-12/2.jpg",
       "/images/panorama-12/3.jpg",
+      "/images/panorama-12/4.jpg",
+      "/images/panorama-12/5.jpg",
     ],
     specs: { tek17: false },
   },
@@ -74,7 +81,12 @@ export const models: Model[] = [
       "Energieffektiv",
       "Perfekt som utleieenhet eller studentbolig",
     ],
-    images: ["/images/hybel-12/1.jpg", "/images/hybel-12/2.jpg"],
+    images: [
+      "/images/hybel-12/1.jpg",
+      "/images/hybel-12/2.jpg",
+      "/images/hybel-12/3.jpg",
+      "/images/hybel-12/4.jpg",
+    ],
     specs: { tek17: false },
   },
   {
@@ -96,6 +108,8 @@ export const models: Model[] = [
       "/images/camping-12/1.jpg",
       "/images/camping-12/2.jpg",
       "/images/camping-12/3.jpg",
+      "/images/camping-12/4.jpg",
+      "/images/camping-12/5.jpg",
     ],
     specs: { tek17: false },
   },
@@ -114,7 +128,14 @@ export const models: Model[] = [
       "Enkel montering",
       "Godt isolert",
     ],
-    images: ["/images/anneks-12/1.jpg", "/images/anneks-12/2.jpg"],
+    images: [
+      "/images/anneks-12/1.jpg",
+      "/images/anneks-12/2.jpg",
+      "/images/anneks-12/3.jpg",
+      "/images/anneks-12/4.jpg",
+      "/images/anneks-12/5.jpg",
+      "/images/anneks-12/6.jpg",
+    ],
     specs: { tek17: false },
   },
   {
@@ -132,7 +153,11 @@ export const models: Model[] = [
       "Naturlig integrert i landskapet",
       "Populær for utleie og turisme",
     ],
-    images: [],
+    images: [
+      "/images/glamping-14/1.jpg",
+      "/images/glamping-14/2.jpg",
+      "/images/glamping-14/3.jpg",
+    ],
     specs: { tek17: false },
   },
   {
@@ -150,7 +175,11 @@ export const models: Model[] = [
       "God takhøyde",
       "Fleksibel møblering",
     ],
-    images: [],
+    images: [
+      "/images/hybel-15/1.jpg",
+      "/images/hybel-15/2.jpg",
+      "/images/hybel-15/3.jpg",
+    ],
     specs: { tek17: false },
   },
   {
@@ -168,7 +197,14 @@ export const models: Model[] = [
       "Energieffektiv konstruksjon",
       "Kan plasseres på egen tomt",
     ],
-    images: [],
+    images: [
+      "/images/minibolig-21/1.jpg",
+      "/images/minibolig-21/2.jpg",
+      "/images/minibolig-21/3.jpg",
+      "/images/minibolig-21/4.jpg",
+      "/images/minibolig-21/5.jpg",
+      "/images/minibolig-21/6.jpg",
+    ],
     specs: { tek17: true },
   },
   {
@@ -186,7 +222,13 @@ export const models: Model[] = [
       "Separat soverom",
       "Moderne kjøkken og bad",
     ],
-    images: [],
+    images: [
+      "/images/minibolig-30/1.jpg",
+      "/images/minibolig-30/2.jpg",
+      "/images/minibolig-30/3.jpg",
+      "/images/minibolig-30/4.jpg",
+      "/images/minibolig-30/5.jpg",
+    ],
     specs: { tek17: true },
   },
   {
@@ -204,7 +246,12 @@ export const models: Model[] = [
       "To soverom",
       "Åpen stue og kjøkkenløsning",
     ],
-    images: [],
+    images: [
+      "/images/minibolig-50-flatt/1.jpg",
+      "/images/minibolig-50-flatt/2.jpg",
+      "/images/minibolig-50-flatt/3.jpg",
+      "/images/minibolig-50-flatt/4.jpg",
+    ],
     specs: { tek17: true },
   },
   {
@@ -222,7 +269,13 @@ export const models: Model[] = [
       "To soverom",
       "Passer inn i etablerte boligområder",
     ],
-    images: [],
+    images: [
+      "/images/minibolig-50-saltak/1.jpg",
+      "/images/minibolig-50-saltak/2.jpg",
+      "/images/minibolig-50-saltak/3.jpg",
+      "/images/minibolig-50-saltak/4.jpg",
+      "/images/minibolig-50-saltak/5.jpg",
+    ],
     specs: { tek17: true },
   },
   {
@@ -240,7 +293,12 @@ export const models: Model[] = [
       "Flatt tak med moderne uttrykk",
       "Ideell for utleie eller generasjonsbolig",
     ],
-    images: [],
+    images: [
+      "/images/tomanns-50-flatt/1.jpg",
+      "/images/tomanns-50-flatt/2.jpg",
+      "/images/tomanns-50-flatt/3.jpg",
+      "/images/tomanns-50-flatt/4.jpg",
+    ],
     specs: { tek17: true },
   },
   {
@@ -258,7 +316,12 @@ export const models: Model[] = [
       "Tradisjonelt saltak",
       "Passer inn i etablerte strøk",
     ],
-    images: [],
+    images: [
+      "/images/tomanns-50-saltak/1.jpg",
+      "/images/tomanns-50-saltak/2.jpg",
+      "/images/tomanns-50-saltak/3.jpg",
+      "/images/tomanns-50-saltak/4.jpg",
+    ],
     specs: { tek17: true },
   },
 ];

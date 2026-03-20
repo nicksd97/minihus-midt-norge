@@ -5,22 +5,24 @@ import { Mail, Phone, MapPin } from "lucide-react";
 export function Footer() {
   return (
     <footer className="border-t border-card-border bg-card">
-      <div className="mx-auto max-w-7xl px-6 py-16">
+      <div className="mx-auto max-w-7xl px-6 pt-12 pb-16">
+        {/* Prominent logo */}
+        <div className="flex justify-center pb-10">
+          <Image
+            src="/samdal-logo.jpg"
+            alt="R. Samdal Snekkeri"
+            width={400}
+            height={100}
+            className="h-auto w-[400px] max-w-[80vw]"
+          />
+        </div>
+
         <div className="grid gap-12 md:grid-cols-3">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3">
-              <Image
-                src="/samdal-logo.jpg"
-                alt="R. Samdal Snekkeri"
-                width={40}
-                height={40}
-                className="rounded"
-              />
-              <h3 className="font-heading text-2xl tracking-wide text-gold">
-                MINIHUS MIDT-NORGE
-              </h3>
-            </div>
+            <h3 className="font-heading text-2xl tracking-wide text-gold">
+              MINIHUS MIDT-NORGE
+            </h3>
             <p className="mt-3 text-sm leading-relaxed text-muted">
               Autorisert Byggmann-forhandler i Midt-Norge. Vi hjelper deg med
               drømmen om eget minihus, fra planlegging til ferdig montert bolig.
