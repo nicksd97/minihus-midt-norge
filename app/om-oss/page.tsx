@@ -5,7 +5,7 @@ import { ArrowRight, Hammer, Users, MapPin, Award } from "lucide-react";
 export const metadata: Metadata = {
   title: "Om oss",
   description:
-    "Byggefirmaet R. Samdal Snekkeri er autorisert FunnBo-forhandler i Midt-Norge. Vi har lang erfaring med bygging og levering av minihus.",
+    "Byggefirmaet R. Samdal Snekkeri er autorisert Byggmann-forhandler i Midt-Norge. Vi har lang erfaring med bygging og levering av minihus.",
 };
 
 export default function AboutPage() {
@@ -15,7 +15,7 @@ export default function AboutPage() {
         OM <span className="text-gold">OSS</span>
       </h1>
       <p className="mt-3 max-w-2xl text-muted">
-        Vi er Midt-Norges autoriserte FunnBo-forhandler, drevet av
+        Vi er Midt-Norges autoriserte Byggmann-forhandler, drevet av
         Byggefirmaet R. Samdal Snekkeri fra Lundamo.
       </p>
 
@@ -27,18 +27,18 @@ export default function AboutPage() {
           <div className="mt-6 flex flex-col gap-4 text-muted leading-relaxed">
             <p>
               Byggefirmaet R. Samdal Snekkeri har lang erfaring innen
-              byggfaget. Vi er stolte av å være autorisert forhandler av FunnBo
-              minihus i Midt-Norge.
+              byggfaget. Vi er stolte av å være autorisert Byggmann-forhandler
+              av minihus i Midt-Norge.
             </p>
             <p>
-              FunnBo er en norsk produsent som designer og bygger minihus
-              tilpasset norske forhold. Husene leveres som byggesett eller
-              ferdig montert, og kan tilpasses dine behov og ønsker.
+              Byggmann designer og bygger minihus tilpasset norske forhold.
+              Husene leveres som byggesett eller ferdig montert, og kan
+              tilpasses dine behov og ønsker.
             </p>
             <p>
               Vi tilbyr komplett service fra første samtale til ferdig montert
-              hus. Enten du ønsker en enkel hagestue, et anneks til hytta, eller
-              en fullverdig TEK17-godkjent bolig — vi hjelper deg hele veien.
+              hus. Enten du ønsker et kompakt småhus eller en fullverdig
+              TEK17-godkjent bolig — vi hjelper deg hele veien.
             </p>
           </div>
         </div>
@@ -53,7 +53,7 @@ export default function AboutPage() {
             {
               icon: Award,
               title: "Autorisert forhandler",
-              desc: "Offisiell FunnBo-forhandler med full produktkunnskap og support.",
+              desc: "Offisiell Byggmann-forhandler med full produktkunnskap og support.",
             },
             {
               icon: MapPin,
@@ -82,23 +82,22 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* FunnBo section */}
+      {/* Byggmann section */}
       <section className="mt-24 rounded-2xl border border-card-border bg-card p-8 sm:p-12">
         <h2 className="font-heading text-3xl tracking-wide sm:text-4xl">
-          OM <span className="text-gold">FUNNBO</span>
+          OM <span className="text-gold">BYGGMANN</span>
         </h2>
         <div className="mt-6 flex flex-col gap-4 text-muted leading-relaxed">
           <p>
-            FunnBo er en norsk produsent av minihus som designer og bygger
-            kompakte boliger og hytter med fokus på kvalitet, funksjonalitet og
-            bærekraft. Alle modeller er utviklet for å tåle norske
+            Byggmann er en norsk produsent av minihus som designer og bygger
+            kompakte boliger og modulhus med fokus på kvalitet, funksjonalitet
+            og bærekraft. Alle modeller er utviklet for å tåle norske
             værforhold.
           </p>
           <p>
-            Produktutvalget spenner fra enkle hagestuer og anneks på 12m² til
-            fullverdige TEK17-godkjente boliger på opptil 50m², samt
-            tomannsboliger på 101m². Husene kan leveres som byggesett eller
-            ferdig montert.
+            Produktutvalget spenner fra kompakte småhus på 12m² til fullverdige
+            TEK17-godkjente boliger på opptil 50m², samt tomannsboliger på
+            101m². Husene kan leveres som byggesett eller ferdig montert.
           </p>
         </div>
         <div className="mt-8">

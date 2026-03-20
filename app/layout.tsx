@@ -17,11 +17,11 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "Minihus Midt-Norge | FunnBo Forhandler",
+    default: "Minihus Midt-Norge | Byggmann-forhandler",
     template: "%s | Minihus Midt-Norge",
   },
   description:
-    "Autorisert FunnBo-forhandler i Midt-Norge. Vi selger og bygger minihus, hytter, anneks og TEK17-godkjente miniboliger. Byggefirmaet R. Samdal Snekkeri, Lundamo.",
+    "Autorisert Byggmann-forhandler i Midt-Norge. Vi selger og bygger minihus, modulboliger og TEK17-godkjente miniboliger. Byggefirmaet R. Samdal Snekkeri, Lundamo.",
 };
 
 export default function RootLayout({

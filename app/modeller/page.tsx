@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Modeller",
   description:
-    "Utforsk vårt komplette utvalg av FunnBo minihus — fra kompakte hytter og anneks til TEK17-godkjente miniboliger.",
+    "Utforsk vårt komplette utvalg av minihus — fra kompakte småhus til TEK17-godkjente miniboliger.",
 };
 
 export default async function ModelsPage({
@@ -28,8 +28,8 @@ export default async function ModelsPage({
         VÅRE <span className="text-gold">MODELLER</span>
       </h1>
       <p className="mt-3 max-w-2xl text-muted">
-        Utforsk vårt komplette utvalg av FunnBo minihus. Fra kompakte hytter og
-        anneks til fullverdige TEK17-godkjente boliger.
+        Utforsk vårt komplette utvalg av minihus. Fra kompakte småhus til
+        fullverdige TEK17-godkjente boliger.
       </p>
 
       <ModelsFilter active={category} />

@@ -152,10 +152,10 @@ export default function ContactPage() {
                 <div>
                   <div className="font-medium">E-post</div>
                   <a
-                    href="mailto:nick@rsamdalsnekkeri.no"
+                    href="mailto:post@rsamdalsnekkeri.no"
                     className="text-sm text-muted transition-colors hover:text-gold"
                   >
-                    nick@rsamdalsnekkeri.no
+                    post@rsamdalsnekkeri.no
                   </a>
                 </div>
               </li>

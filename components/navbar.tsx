@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -16,8 +17,15 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-card-border bg-background/80 backdrop-blur-md">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <Link href="/" className="flex items-center gap-2">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
+        <Link href="/" className="flex items-center gap-3">
+          <Image
+            src="/samdal-logo.jpg"
+            alt="R. Samdal Snekkeri"
+            width={48}
+            height={48}
+            className="rounded"
+          />
           <span className="font-heading text-2xl tracking-wide text-gold">
             MINIHUS MIDT-NORGE
           </span>

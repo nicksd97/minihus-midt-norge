@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 const filters = [
   { value: "alle", label: "Alle" },
-  { value: "hytter", label: "Hytter & Anneks" },
+  { value: "smahus", label: "Småhus" },
   { value: "boliger", label: "Boliger TEK17" },
 ];
 

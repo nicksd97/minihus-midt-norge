@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { models, getModelById, formatPrice } from "@/lib/data";
+import { models, getModelById } from "@/lib/data";
 import type { Metadata } from "next";
 import {
   ArrowLeft,
@@ -39,6 +39,8 @@ export default async function ModelPage({
   const model = getModelById(id);
   if (!model) notFound();
 
+  const hasImage = model.images.length > 0;
+
   return (
     <div className="mx-auto max-w-7xl px-6 py-16">
       <Link
@@ -50,15 +52,21 @@ export default async function ModelPage({
 
       <div className="mt-8 grid gap-12 lg:grid-cols-2">
         {/* Image */}
-        <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-card-border">
-          <Image
-            src={model.imageUrl}
-            alt={model.name}
-            fill
-            className="object-cover"
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            priority
-          />
+        <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-card-border bg-card-border">
+          {hasImage ? (
+            <Image
+              src={model.images[0]}
+              alt={model.name}
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              priority
+            />
+          ) : (
+            <div className="flex h-full items-center justify-center text-muted">
+              <span>Bilde kommer</span>
+            </div>
+          )}
           {model.specs.tek17 && (
             <div className="absolute left-4 top-4 flex items-center gap-1 rounded-full bg-primary px-3 py-1.5 text-sm font-semibold text-foreground">
               <BadgeCheck size={16} />
@@ -92,10 +100,30 @@ export default async function ModelPage({
           </div>
 
           <div className="mt-6 font-heading text-3xl text-gold">
-            {formatPrice(model.price)}
+            Pris på forespørsel
           </div>
 
           <p className="mt-6 leading-relaxed text-muted">{model.description}</p>
+
+          {/* Additional images */}
+          {model.images.length > 1 && (
+            <div className="mt-6 grid grid-cols-3 gap-3">
+              {model.images.slice(1).map((img, i) => (
+                <div
+                  key={i}
+                  className="relative aspect-[4/3] overflow-hidden rounded-lg border border-card-border"
+                >
+                  <Image
+                    src={img}
+                    alt={`${model.name} bilde ${i + 2}`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 33vw, 16vw"
+                  />
+                </div>
+              ))}
+            </div>
+          )}
 
           {/* Features */}
           <div className="mt-8">

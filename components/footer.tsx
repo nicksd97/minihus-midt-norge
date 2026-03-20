@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 export function Footer() {
@@ -8,12 +9,21 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-3">
           {/* Brand */}
           <div>
-            <h3 className="font-heading text-2xl tracking-wide text-gold">
-              MINIHUS MIDT-NORGE
-            </h3>
+            <div className="flex items-center gap-3">
+              <Image
+                src="/samdal-logo.jpg"
+                alt="R. Samdal Snekkeri"
+                width={40}
+                height={40}
+                className="rounded"
+              />
+              <h3 className="font-heading text-2xl tracking-wide text-gold">
+                MINIHUS MIDT-NORGE
+              </h3>
+            </div>
             <p className="mt-3 text-sm leading-relaxed text-muted">
-              Autorisert FunnBo-forhandler i Midt-Norge. Vi hjelper deg med
-              drommen om eget minihus, fra planlegging til ferdig montert bolig.
+              Autorisert Byggmann-forhandler i Midt-Norge. Vi hjelper deg med
+              drømmen om eget minihus, fra planlegging til ferdig montert bolig.
             </p>
           </div>
 
@@ -57,11 +67,11 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:nick@rsamdalsnekkeri.no"
+                  href="mailto:post@rsamdalsnekkeri.no"
                   className="flex items-center gap-2 text-sm text-muted transition-colors hover:text-gold"
                 >
                   <Mail size={16} className="shrink-0 text-gold" />
-                  nick@rsamdalsnekkeri.no
+                  post@rsamdalsnekkeri.no
                 </a>
               </li>
               <li>

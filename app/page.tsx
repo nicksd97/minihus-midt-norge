@@ -1,6 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
-import { models, formatPrice } from "@/lib/data";
+import { models } from "@/lib/data";
 import { ModelCard } from "@/components/model-card";
 import {
   ArrowRight,
@@ -10,7 +9,6 @@ import {
   ChevronDown,
   Phone,
   Mail,
-  MapPin,
 } from "lucide-react";
 
 const stats = [
@@ -23,15 +21,15 @@ const stats = [
 const faqs = [
   {
     q: "Hva er et minihus?",
-    a: "Et minihus er en kompakt bolig, vanligvis mellom 12 og 50 kvadratmeter. Våre FunnBo-minihus leveres som ferdig produserte moduler som monteres på din tomt.",
+    a: "Et minihus er en kompakt bolig, vanligvis mellom 12 og 50 kvadratmeter. Våre minihus leveres som ferdig produserte moduler som monteres på din tomt.",
   },
   {
     q: "Trenger jeg byggetillatelse?",
-    a: "For hytter og anneks under 15m² trenger du som regel ikke byggetillatelse, men du må sende byggesøknad. For TEK17-boliger kreves full byggesøknad. Vi hjelper deg med hele prosessen.",
+    a: "For minihus under 15m² trenger du som regel ikke byggetillatelse, men du må sende byggesøknad. For TEK17-boliger kreves full byggesøknad. Vi hjelper deg med hele prosessen.",
   },
   {
     q: "Hva inkluderer prisen?",
-    a: "Prisene inkluderer selve bygget som byggesett. Transport, grunnarbeid, montering og tilkobling til vann/avløp/strøm kommer i tillegg. Vi gir deg et komplett tilbud på forespørsel.",
+    a: "Kontakt oss for et komplett tilbud tilpasset dine behov. Vi gir deg en detaljert oversikt over hva som er inkludert for den modellen du er interessert i.",
   },
   {
     q: "Hvor lang er leveringstiden?",
@@ -39,11 +37,11 @@ const faqs = [
   },
   {
     q: "Kan minihuset tilpasses?",
-    a: "Ja, FunnBo-modellene kan tilpasses med ulike farger, materialer og innvendige løsninger. Vi hjelper deg med å finne den perfekte konfigurasjonen.",
+    a: "Ja, modellene kan tilpasses med ulike farger, materialer og innvendige løsninger. Vi hjelper deg med å finne den perfekte konfigurasjonen.",
   },
 ];
 
-const featured = models.filter((m) => m.price !== null).slice(0, 6);
+const featured = models.slice(0, 6);
 
 export default function HomePage() {
   return (
@@ -55,7 +53,7 @@ export default function HomePage() {
         <div className="relative mx-auto max-w-7xl px-6 py-24">
           <div className="max-w-3xl">
             <span className="inline-block rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-sm font-medium text-gold">
-              Autorisert FunnBo-forhandler
+              Autorisert Byggmann-forhandler
             </span>
             <h1 className="mt-6 font-heading text-5xl leading-tight tracking-wide sm:text-7xl">
               DITT NYE{" "}
@@ -63,9 +61,9 @@ export default function HomePage() {
               <br />I MIDT-NORGE
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
-              Vi leverer kvalitets minihus fra FunnBo — fra kompakte hytter og
-              anneks til fullverdige TEK17-godkjente boliger. Bygget for norske
-              forhold, levert til din tomt.
+              Vi leverer kvalitets minihus — fra kompakte småhus til fullverdige
+              TEK17-godkjente boliger. Bygget for norske forhold, levert til din
+              tomt.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
@@ -108,8 +106,8 @@ export default function HomePage() {
           {[
             {
               icon: Home,
-              title: "FunnBo Kvalitet",
-              desc: "Vi er autorisert forhandler av FunnBo — Norges ledende produsent av minihus. Alle modeller er designet for norske forhold.",
+              title: "Byggmann Kvalitet",
+              desc: "Vi er autorisert Byggmann-forhandler. Alle modeller er designet og bygget for norske forhold.",
             },
             {
               icon: Shield,
@@ -119,7 +117,7 @@ export default function HomePage() {
             {
               icon: Wrench,
               title: "Komplett Service",
-              desc: "Fra første samtale til nøkkelferdigt hus. Vi bistår med rådgivning, byggesøknad, grunnarbeid og montering.",
+              desc: "Fra første samtale til nøkkelferdig hus. Vi bistår med rådgivning, byggesøknad, grunnarbeid og montering.",
             },
           ].map((item) => (
             <div
@@ -149,7 +147,7 @@ export default function HomePage() {
                 POPULÆRE <span className="text-gold">MODELLER</span>
               </h2>
               <p className="mt-3 text-muted">
-                Utforsk vårt utvalg av minihus fra FunnBo
+                Utforsk vårt utvalg av minihus og modulboliger
               </p>
             </div>
             <Link
@@ -219,10 +217,10 @@ export default function HomePage() {
               <Phone size={20} /> +47 913 30 854
             </a>
             <a
-              href="mailto:nick@rsamdalsnekkeri.no"
+              href="mailto:post@rsamdalsnekkeri.no"
               className="inline-flex items-center gap-2 text-lg font-medium text-gold"
             >
-              <Mail size={20} /> nick@rsamdalsnekkeri.no
+              <Mail size={20} /> post@rsamdalsnekkeri.no
             </a>
           </div>
           <div className="mt-8">
