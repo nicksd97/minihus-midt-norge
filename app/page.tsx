@@ -1,6 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import { models } from "@/lib/data";
-import { ModelCard } from "@/components/model-card";
+import { HeroCarousel } from "@/components/hero-carousel";
 import {
   ArrowRight,
   Home,
@@ -9,6 +10,7 @@ import {
   ChevronDown,
   Phone,
   Mail,
+  Ruler,
 } from "lucide-react";
 
 const stats = [
@@ -41,18 +43,30 @@ const faqs = [
   },
 ];
 
-const featured = models.slice(0, 6);
+const carouselItems = models
+  .filter((m) => m.images.length > 0)
+  .slice(0, 5)
+  .map((m) => ({
+    id: m.id,
+    name: m.name,
+    size: m.size,
+    sizeUnit: m.sizeUnit,
+    image: m.images[0],
+  }));
+
+const popularModels = models.filter((m) => m.images.length > 0).slice(0, 6);
 
 export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative flex min-h-[90vh] items-center overflow-hidden">
+      <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-background to-background" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--color-primary)_0%,_transparent_60%)] opacity-30" />
-        <div className="relative mx-auto max-w-7xl px-6 py-24">
-          <div className="max-w-3xl">
-            <span className="inline-block rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-sm font-medium text-gold">
+        <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-[1fr_400px] lg:gap-16 lg:py-28">
+          {/* Left: text */}
+          <div className="flex flex-col justify-center">
+            <span className="inline-block w-fit rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-sm font-medium text-gold">
               Autorisert Byggmann-forhandler
             </span>
             <h1 className="mt-6 font-heading text-5xl leading-tight tracking-wide sm:text-7xl">
@@ -80,6 +94,11 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
+
+          {/* Right: carousel */}
+          <div className="flex items-center">
+            <HeroCarousel items={carouselItems} />
+          </div>
         </div>
       </section>
 
@@ -97,78 +116,125 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why us */}
+      {/* Popular models grid */}
       <section className="mx-auto max-w-7xl px-6 py-24">
-        <h2 className="text-center font-heading text-4xl tracking-wide sm:text-5xl">
-          HVORFOR VELGE <span className="text-gold">OSS</span>
-        </h2>
-        <div className="mt-16 grid gap-8 md:grid-cols-3">
-          {[
-            {
-              icon: Home,
-              title: "Byggmann Kvalitet",
-              desc: "Vi er autorisert Byggmann-forhandler. Alle modeller er designet og bygget for norske forhold.",
-            },
-            {
-              icon: Shield,
-              title: "TEK17 Godkjent",
-              desc: "Våre boligmodeller oppfyller alle krav i TEK17, som betyr at de kan brukes som permanent bolig med full byggetillatelse.",
-            },
-            {
-              icon: Wrench,
-              title: "Komplett Service",
-              desc: "Fra første samtale til nøkkelferdig hus. Vi bistår med rådgivning, byggesøknad, grunnarbeid og montering.",
-            },
-          ].map((item) => (
+        <div className="flex items-end justify-between">
+          <div>
+            <h2 className="font-heading text-4xl tracking-wide sm:text-5xl">
+              POPULÆRE <span className="text-gold">MODELLER</span>
+            </h2>
+            <p className="mt-3 text-muted">
+              Utforsk vårt utvalg av minihus og modulboliger
+            </p>
+          </div>
+          <Link
+            href="/modeller"
+            className="hidden items-center gap-1 text-sm font-medium text-gold transition-colors hover:text-gold-light md:flex"
+          >
+            Se alle <ArrowRight size={16} />
+          </Link>
+        </div>
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {popularModels.map((model) => (
             <div
-              key={item.title}
-              className="rounded-xl border border-card-border bg-card p-8 transition-colors hover:border-gold/30"
+              key={model.id}
+              className="group overflow-hidden rounded-xl border border-card-border bg-card transition-all hover:border-gold/40 hover:shadow-lg hover:shadow-gold/5"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary">
-                <item.icon size={24} className="text-gold" />
+              <Link href={`/modeller/${model.id}`}>
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+                    src={model.images[0]}
+                    alt={model.name}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                  {model.specs.tek17 && (
+                    <div className="absolute left-3 top-3 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-foreground">
+                      TEK17
+                    </div>
+                  )}
+                </div>
+              </Link>
+              <div className="p-5">
+                <Link href={`/modeller/${model.id}`}>
+                  <h3 className="font-heading text-xl tracking-wide group-hover:text-gold transition-colors">
+                    {model.name}
+                  </h3>
+                </Link>
+                <div className="mt-2 flex items-center gap-3 text-sm text-muted">
+                  <span className="flex items-center gap-1">
+                    <Ruler size={14} />
+                    BRA {model.size} {model.sizeUnit}
+                  </span>
+                </div>
+                <div className="mt-4 flex items-center justify-between">
+                  <Link
+                    href={`/modeller/${model.id}`}
+                    className="text-sm font-medium text-gold transition-colors hover:text-gold-light"
+                  >
+                    Se modell
+                  </Link>
+                  <Link
+                    href="/kontakt"
+                    className="rounded-lg bg-gold px-4 py-2 text-sm font-semibold text-background transition-colors hover:bg-gold-light"
+                  >
+                    Kontakt oss
+                  </Link>
+                </div>
               </div>
-              <h3 className="mt-4 font-heading text-xl tracking-wide">
-                {item.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted">
-                {item.desc}
-              </p>
             </div>
           ))}
         </div>
+        <div className="mt-8 text-center md:hidden">
+          <Link
+            href="/modeller"
+            className="inline-flex items-center gap-1 text-sm font-medium text-gold"
+          >
+            Se alle modeller <ArrowRight size={16} />
+          </Link>
+        </div>
       </section>
 
-      {/* Featured models */}
+      {/* Why us */}
       <section className="bg-card py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="flex items-end justify-between">
-            <div>
-              <h2 className="font-heading text-4xl tracking-wide sm:text-5xl">
-                POPULÆRE <span className="text-gold">MODELLER</span>
-              </h2>
-              <p className="mt-3 text-muted">
-                Utforsk vårt utvalg av minihus og modulboliger
-              </p>
-            </div>
-            <Link
-              href="/modeller"
-              className="hidden items-center gap-1 text-sm font-medium text-gold transition-colors hover:text-gold-light md:flex"
-            >
-              Se alle <ArrowRight size={16} />
-            </Link>
-          </div>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {featured.map((model) => (
-              <ModelCard key={model.id} model={model} />
+          <h2 className="text-center font-heading text-4xl tracking-wide sm:text-5xl">
+            HVORFOR VELGE <span className="text-gold">OSS</span>
+          </h2>
+          <div className="mt-16 grid gap-8 md:grid-cols-3">
+            {[
+              {
+                icon: Home,
+                title: "Byggmann Kvalitet",
+                desc: "Vi er autorisert Byggmann-forhandler. Alle modeller er designet og bygget for norske forhold.",
+              },
+              {
+                icon: Shield,
+                title: "TEK17 Godkjent",
+                desc: "Våre boligmodeller oppfyller alle krav i TEK17, som betyr at de kan brukes som permanent bolig med full byggetillatelse.",
+              },
+              {
+                icon: Wrench,
+                title: "Komplett Service",
+                desc: "Fra første samtale til nøkkelferdig hus. Vi bistår med rådgivning, byggesøknad, grunnarbeid og montering.",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="rounded-xl border border-card-border bg-background p-8 transition-colors hover:border-gold/30"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary">
+                  <item.icon size={24} className="text-gold" />
+                </div>
+                <h3 className="mt-4 font-heading text-xl tracking-wide">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">
+                  {item.desc}
+                </p>
+              </div>
             ))}
-          </div>
-          <div className="mt-8 text-center md:hidden">
-            <Link
-              href="/modeller"
-              className="inline-flex items-center gap-1 text-sm font-medium text-gold"
-            >
-              Se alle modeller <ArrowRight size={16} />
-            </Link>
           </div>
         </div>
       </section>
