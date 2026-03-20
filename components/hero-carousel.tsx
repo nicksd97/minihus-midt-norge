@@ -32,68 +32,73 @@ export function HeroCarousel({ items }: { items: CarouselItem[] }) {
   const item = items[current];
 
   return (
-    <div className="relative flex flex-col">
-      {/* Image */}
-      <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-card-border">
-        {items.map((slide, i) => (
-          <div
-            key={slide.id}
-            className={`absolute inset-0 transition-opacity duration-500 ${
-              i === current ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <Image
-              src={slide.image}
-              alt={slide.name}
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 40vw"
-              priority={i === 0}
-            />
-          </div>
-        ))}
-
-        {/* Arrows */}
-        <button
-          onClick={prev}
-          className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-background/60 p-2 text-foreground backdrop-blur-sm transition-colors hover:bg-background/80"
-          aria-label="Forrige"
+    <div className="relative h-[300px] w-full overflow-hidden rounded-xl sm:h-[400px] lg:h-full lg:min-h-[500px]">
+      {/* Slides */}
+      {items.map((slide, i) => (
+        <div
+          key={slide.id}
+          className={`absolute inset-0 transition-opacity duration-700 ${
+            i === current ? "opacity-100" : "opacity-0 pointer-events-none"
+          }`}
         >
-          <ChevronLeft size={20} />
-        </button>
-        <button
-          onClick={next}
-          className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-background/60 p-2 text-foreground backdrop-blur-sm transition-colors hover:bg-background/80"
-          aria-label="Neste"
-        >
-          <ChevronRight size={20} />
-        </button>
-      </div>
+          <Image
+            src={slide.image}
+            alt={slide.name}
+            fill
+            className="object-cover"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            priority={i === 0}
+          />
+        </div>
+      ))}
 
-      {/* Info bar */}
-      <div className="mt-4 flex items-center justify-between">
+      {/* Gradient overlay at bottom */}
+      <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+
+      {/* Info overlay */}
+      <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 sm:p-6">
         <div>
-          <h3 className="font-heading text-xl tracking-wide">{item.name}</h3>
-          <p className="text-sm text-muted">
+          <h3 className="font-heading text-2xl tracking-wide text-white sm:text-3xl">
+            {item.name}
+          </h3>
+          <p className="text-sm text-white/70">
             {item.size} {item.sizeUnit}
           </p>
         </div>
         <Link
-          href={`/kontakt`}
-          className="rounded-lg bg-gold px-4 py-2 text-sm font-semibold text-background transition-colors hover:bg-gold-light"
+          href="/kontakt"
+          className="shrink-0 rounded-lg bg-gold px-4 py-2 text-sm font-semibold text-background transition-colors hover:bg-gold-light"
         >
           Kontakt for pris
         </Link>
       </div>
 
+      {/* Arrows */}
+      <button
+        onClick={prev}
+        className="absolute left-2.5 top-1/2 -translate-y-1/2 rounded-full bg-black/30 p-1.5 text-white/80 backdrop-blur-sm transition hover:bg-black/50"
+        aria-label="Forrige"
+      >
+        <ChevronLeft size={18} />
+      </button>
+      <button
+        onClick={next}
+        className="absolute right-2.5 top-1/2 -translate-y-1/2 rounded-full bg-black/30 p-1.5 text-white/80 backdrop-blur-sm transition hover:bg-black/50"
+        aria-label="Neste"
+      >
+        <ChevronRight size={18} />
+      </button>
+
       {/* Dots */}
-      <div className="mt-4 flex justify-center gap-2">
+      <div className="absolute inset-x-0 bottom-1.5 flex justify-center gap-1.5">
         {items.map((_, i) => (
           <button
             key={i}
             onClick={() => setCurrent(i)}
-            className={`h-2 rounded-full transition-all ${
-              i === current ? "w-6 bg-gold" : "w-2 bg-foreground/20"
+            className={`h-1.5 rounded-full transition-all ${
+              i === current
+                ? "w-5 bg-gold"
+                : "w-1.5 bg-white/40 hover:bg-white/60"
             }`}
             aria-label={`Gå til slide ${i + 1}`}
           />
